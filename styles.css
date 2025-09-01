@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+header h1{
+    font-family: Courier New;
+    font-size: 45px;
+    font-weight: 900;
+}
+@keyframes animate-gradient {
+    to{
+        background-position: 200%;
+    }
+}
+
+header ul{
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    font-family: Monospace;
+    font-size: 15px;
+    background: linear-gradient(to right, #c4d1d4, grey, rgb(200, 200, 210), #929899, #464849, #0f1010, #c4d1d4);
+    background-size: 200%;
+    background-clip : text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+}
+.intro-section{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 70px;
+}
+.intro-section img{
+    width: 600px;
+    height: 600px;
+    transition: 0.3s;
+    animation-name: bloom;
+    animation-duration: 1s;
+}
+.intro-section img:hover{
+    transform: scale(1.1);
+}
+.hi-text{
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    line-height: 0.6px;
+}
+.hi-text h2{
+    font-family: Monospace;
+    font-size: 70px;
+    font-weight: 500;
+}
+.hi-text h3{
+    font-size: 30px;
+    font-weight: 300;
+}
+.buttons{
+    padding-top: 50px;
+    display: flex;
+    gap: 50px;
+}
+.buttons a{
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: Monospace;
+    background-color: black;
+    min-width: 110px;
+    transition: 0.3s;
+    animation: butt-intranceanim 0.5s linear;
+}
+.buttons a:hover{
+    padding: 15px;
+}
+footer{
+    padding: 500px 50px;
+    text-align: center;
+}
+footer ul{
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    justify-content: center;
+}
+footer ul li img{
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes butt-intranceanim{
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+@keyframes bloom{
+    from{
+        opacity: 0.6;
+        transform: scale(0.6);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
