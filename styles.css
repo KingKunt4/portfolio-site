@@ -7,10 +7,10 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 0 10px;
 }
 header h1{
-    font-family: Courier New;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 45px;
     font-weight: 900;
 }
@@ -26,12 +26,20 @@ header ul{
     gap: 30px;
     font-family: Monospace;
     font-size: 15px;
-    background: linear-gradient(to right, #c4d1d4, grey, rgb(200, 200, 210), #929899, #464849, #0f1010, #c4d1d4);
+    background: linear-gradient(to right, #a0a7a8ff, grey, rgb(200, 200, 210), #929899, #464849, #0f1010, #a0a7a8ff);
     background-size: 200%;
     background-clip : text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: animate-gradient 2.5s linear infinite;
+    transition: 1s;
+}
+header ul li:hover{
+    background-clip: none;
+    -webkit-text-fill-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+
 }
 .intro-section{
     display: flex;
@@ -39,16 +47,15 @@ header ul{
     align-items: center;
     justify-content: space-between;
     padding-left: 70px;
+    font-family: 'Courier New', Courier, monospace;
 }
 .intro-section img{
     width: 600px;
     height: 600px;
     transition: 0.3s;
-    animation-name: bloom;
-    animation-duration: 1s;
 }
-.intro-section img:hover{
-    transform: scale(1.1);
+.intro p{
+    animation: seperate 0.5s forwards;
 }
 .hi-text{
     display: flex;
@@ -57,7 +64,6 @@ header ul{
     line-height: 0.6px;
 }
 .hi-text h2{
-    font-family: Monospace;
     font-size: 70px;
     font-weight: 500;
 }
@@ -71,20 +77,23 @@ header ul{
     gap: 50px;
 }
 .buttons a{
-    padding: 20px;
+    padding: 10px;
+    margin-top: -20px;
     text-decoration: none;
     color: white;
     font-family: Monospace;
     background-color: black;
     min-width: 110px;
     transition: 0.3s;
-    animation: butt-intranceanim 0.5s linear;
+    animation: scaleUp 0.5s;
 }
 .buttons a:hover{
     padding: 15px;
+    font-weight: 500;
+    border-radius: 5px;
 }
 footer{
-    padding: 500px 50px;
+    padding: 50px 50px;
     text-align: center;
 }
 footer ul{
@@ -97,8 +106,71 @@ footer ul li img{
     width: 20px;
     height: 20px;
 }
-
-@keyframes butt-intranceanim{
+.about-section{
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.about-section h1{
+    font-size: 70px;
+}
+.blog-section{
+    margin: auto;
+    display: grid;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    align-items: center;
+    gap: 50px;
+    max-width: 80vw;
+}
+.blog-section h1{
+    font-size: 50px;
+}
+.blog-post{
+    text-align: initial;
+    color: white;
+    background-color: #0f1010;
+    padding: 10px;
+    transition: 0.3s;
+}
+.blog-post:hover{
+    transform: translateY(-5px);
+}
+.blog-post a{
+    text-decoration: none;
+    color: #464849;
+}
+.date{
+  color: #464849;
+}
+.portfolio-section{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+.portfolio-section h1{
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+.portfolio-grid{
+    text-align: initial;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
+    justify-content: center;
+    gap: 30px;
+}
+.image-card{
+    overflow: hidden;
+    box-shadow: 5px 0px 5px black;
+}
+.image-card h2 p{
+    padding: 10px;
+    font-size: smaller;
+}
+.image-card img{
+    width: 100%;
+    height: auto;
+}
+@keyframes scaleUp{
     from{
         opacity: 0;
         transform: translateY(200px) scale(0.3);
@@ -110,11 +182,17 @@ footer ul li img{
 }
 @keyframes bloom{
     from{
-        opacity: 0.6;
         transform: scale(0.6);
     }
     to{
-        opacity: 1;
         transform: scale(1);
+    }
+}
+@keyframes seperate{
+    from{
+    margin-top: -50px;
+    }
+    to{
+        margin-top: 10px;
     }
 }
