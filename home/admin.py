@@ -1,3 +1,3 @@
 from django.contrib import admin
-from . import models
-admin.register(models.newProject)
+from .models import newProject
+admin.site.register(newProject)

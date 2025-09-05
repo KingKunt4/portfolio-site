@@ -1,27 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Home{% endblock %}
+{% block title %}portfolio{% endblock %}
 
 {% block content %}
            <section class="portfolio-section">
             <h1>portfolio</h1>
             <div class="portfolio-grid">
+              {% for newproject in newproject %}
                 <div class="image-card">
-                    <img src="{% static 'Capture1.png' %}">
-                    <h2>Landing page for a gaming website</h2>
-                    <p>Made with HTML/CSS and a little JavaScript for animations and responsiveness</p>
+                    <img src="{{ newproject.image.url }}">
+                    <h2>{{ newproject.name }}</h2>
+                    <p>{{ newproject.description }}</p>
                 </div>
-                <div class="image-card">
-                    <img src="{% static 'Capture2.png' %}">
-                    <h2>An online market place web app</h2>
-                    <p>Made with python (django) for backend and SQLite database to facilitate vendor to customer communication</p>
-                </div>
-                <div class="image-card">
-                    <img src="{% static 'portfolio-site.png' %}">
-                    <h2>A personal website</h2>
-                    <p>Made with django in python for some backend support and styled with CSS</p>
-                </div>
+              {% endfor %}
             </div>
            </section>
   {% endblock %}

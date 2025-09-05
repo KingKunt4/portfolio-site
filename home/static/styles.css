@@ -162,6 +162,11 @@ footer ul li img{
     overflow: hidden;
     box-shadow: 5px 0px 5px black;
 }
+.image-card:hover, image-card h2:hover p:hover, image-card img:hover{
+  transform: scale(1.05);
+  transition: 0.7s;
+  
+}
 .image-card h2 p{
     padding: 10px;
     font-size: smaller;
