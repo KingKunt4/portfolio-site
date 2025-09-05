@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+        <section class="intro-section">
+            <div class="intro">
+                <div class="hi-text">
+                    <h2>Hi,</h2>
+                    <h3>i'm otega</h3>
+                </div>
+                <p>Fullstack web developer and software engineer </p>
+                <div class="buttons expand-in">
+                    <a href="{% url 'contact'%}">got a project?</a>
+                    <a href="{% url 'portfolio' %}">view my work</a>
+                </div>
+           </div>
+            <img src="{% static 'tega.png' %}" alt="my picture" class="expand-in">
+        </section>
+{% endblock %}        

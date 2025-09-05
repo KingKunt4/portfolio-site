@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width= device-width; initial-scale= 1.0">
+        <title>{% block title %}{% endblock %} |otega richard</title>
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>otega richard.</h1>
+            <ul>
+                <li><a href="{% url 'index' %}">home</li>
+                <li><a href="{% url 'about' %}">about</a></li>
+                <li><a href="{% url 'blog' %}">blog</a></li>
+                <li><a href="{% url 'portfolio' %}">recent work</a></li>
+                <li><a href="{% url 'contact' %}">contact me</a></li>
+            </ul>
+        </header>
+       {% block content %}
+       {% endblock %}
+        <footer>
+            <p>© 2025 otega richard. All rights reserved</p>
+            <ul>
+                <li><a href="#"><img src="{% static 'github-icon.png' %}" alt="github"></a></li>
+                <li><a href="#"><img src="{% static 'insta-icon.png' %}" alt="instagram"></a></li>
+                <li><a href="#"><img src="{% static  'twitter-icon.png' %}" alt="twitter"></a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

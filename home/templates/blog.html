@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta name="viewport" content="width= device-width; initial-scale= 1.0">
-        <title>Home | otega richard</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <h1>otega richard.</h1>
-            <ul>
-                <li><a href="index.html">home</li>
-                <li><a href="about.html">about</a></li>
-                <li><a href="blog.html">blog</a></li>
-                <li><a href="portfolio.html">recent work</a></li>
-                <li><a href="contact.html">contact me</a></li>
-            </ul>
-        </header>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
             <section class="blog-section">
                 <h1>blog</h1>
                 <div class="blog-post">
@@ -30,14 +18,5 @@
                     <p>Getting your foot in the door and printing your first 'Hello world' to the screen is quite exhilirating and give you a rush, but as you learn more and write some basic programs with loops and conditionals, maybe even functions, it is natural to feel yourself slowing down and not quite sure of where to take it to next...</p>
                     <a href="#">read more...</a>
                 </div>
-            </section>
-        <footer>
-            <p>© 2025 otega richard. All rights reserved</p>
-            <ul>
-                <li><a href="#"><img src="github-icon.png" alt="github"></a></li>
-                <li><a href="#"><img src="insta-icon.png" alt="instagram"></a></li>
-                <li><a href="#"><img src="twitter-icon.png" alt="twitter"></a></li>
-            </ul>
-        </footer>
-    </body>
-</html>
+  {% endblock %}
+  
