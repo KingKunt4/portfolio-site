@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import newProject
+from .forms import contactForm
 
 def home(request):
   return render(request, 'index.html')
@@ -17,4 +18,5 @@ def portfolio(request):
   })
   
 def contact(request):
-  return render(request, 'contact.html')
+  form = contactForm()
+  return render(request, 'contact.html', {'form': form})

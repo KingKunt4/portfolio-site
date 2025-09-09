@@ -1,3 +1,6 @@
+impasse{
+    width: auto;
+}
 body {
     margin: 0;
     padding: 0;
@@ -20,11 +23,12 @@ header h1{
     }
 }
 
-header ul{
+.navbar ul{
     display: flex;
+    position: relative;
     list-style-type: none;
     gap: 30px;
-    font-family: Monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
     background: linear-gradient(to right, #a0a7a8ff, grey, rgb(200, 200, 210), #929899, #464849, #0f1010, #a0a7a8ff);
     background-size: 200%;
@@ -34,7 +38,54 @@ header ul{
     animation: animate-gradient 2.5s linear infinite;
     transition: 1s;
 }
-header ul li:hover{
+.navbar ul li:hover{
+    background-clip: none;
+    -webkit-text-fill-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.navbar img{
+  width: 15px;
+  height: 15px;
+  display: none;
+}
+.sidebar{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height:80vh;
+  z-index: 999;
+  background-color: white;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 240px;
+  box-shadow: 0 0 5px grey;
+  font-family: 'Courier New', Courier, monospace;
+}
+.sidebar img{
+  width: 10px;
+  height: 10px;
+}
+.sidebar ul{
+    width: 240px;
+    list-style-type: none;
+    font-size: 15px;
+    background: linear-gradient(to right, #a0a7a8ff, rgb(75, 75, 75), rgb(58, 58, 59), #929899, #464849, #0f1010, #a0a7a8ff);
+    background-size: 200%;
+    background-clip : text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+    transition: 1s;
+
+}
+.sidebar li{
+    margin-bottom: 20px;
+    width: 100%;
+}
+.sidebar li:hover{
     background-clip: none;
     -webkit-text-fill-color: black;
     border-radius: 5px;
@@ -109,6 +160,7 @@ footer ul li img{
 .about-section{
     text-align: center;
     margin-top: 100px;
+    padding: 0 10px;
     font-family: 'Courier New', Courier, monospace;
 }
 .about-section h1{
@@ -175,6 +227,10 @@ footer ul li img{
     width: 100%;
     height: auto;
 }
+.errorpage{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
 @keyframes scaleUp{
     from{
         opacity: 0;
@@ -199,5 +255,69 @@ footer ul li img{
     }
     to{
         margin-top: 10px;
+    }
+}
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .intro-section{
+    gap: 10px;
+    padding: 50px 10px;
+    }
+    .intro-section img{
+        width: 253px;
+        height: 322px;
+        margin-bottom: 100px;
+    }
+    .intro p{
+        font-size: smaller;
+    }
+    .hi-text{
+        display: flex;
+        gap: 2px;
+        margin-top: 50px;
+    }
+    .hi-text h2{
+        font-size: 40px;
+        font-weight: 500;
+    }
+    .hi-text h3{
+        font-size: 15px;
+        font-weight: 300;
+    }
+    .buttons{
+        padding-top: 50px;
+        display: flex;
+        gap: 20px;
+    }
+    .buttons a{
+        padding: 7px;
+        margin-top: 100px;
+        min-width: 0px;
+    }
+    .buttons a:hover{
+        padding: 10px;
+    }
+    header h1{
+        font-size: 30px;
+    }
+
+    .about-section h1{
+        font-size: 50px;
+    }
+    .blog-section{
+        gap: 40px;
+        max-width: 95vw;
+    }
+    .portfolio-section h1{
+        font-size: 30px;
+        margin-bottom: 70px;
+    }
+    .portfolio-grid{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 450px));
+    }
+    .navbar img{
+        display: block;
     }
 }

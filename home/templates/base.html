@@ -3,19 +3,32 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width= device-width; initial-scale= 1.0">
-        <title>{% block title %}{% endblock %} |otega richard</title>
+        <title>{% block title %}{% endblock %} | otega richard</title>
         <link rel="stylesheet" href="{% static 'styles.css' %}">
     </head>
     <body>
         <header>
             <h1>otega richard.</h1>
-            <ul>
-                <li><a href="{% url 'home' %}">home</li>
-                <li><a href="{% url 'about' %}">about</a></li>
-                <li><a href="{% url 'blog' %}">blog</a></li>
-                <li><a href="{% url 'portfolio' %}">recent work</a></li>
-                <li><a href="{% url 'contact' %}">contact me</a></li>
-            </ul>
+            <div class="navbar">
+              <ul>
+                  <li class="hideOnMobile"><a href="{% url 'home' %}">home</li>
+                  <li class="hideOnMobile"><a href="{% url 'about' %}">about</a></li>
+                  <li class="hideOnMobile"><a href="{% url 'blog' %}">blog</a></li>
+                  <li class="hideOnMobile"><a href="{% url 'portfolio' %}">recent work</a></li>
+                  <li class="hideOnMobile"><a href="{% url 'contact' %}">contact me</a></li>
+                  <li onclick="showSideBar()"><img src="{% static 'align-left.png' %}"></li>
+              </ul>
+            </div>
+            <div class="sidebar">
+                <ul>
+                    <li onclick="hideSideBar()"><img src="{% static 'cross.png' %}"></li>
+                    <li><a href="{% url 'home' %}">home</li>
+                    <li><a href="{% url 'about' %}">about</a></li>
+                    <li><a href="{% url 'blog' %}">blog</a></li>
+                    <li><a href="{% url 'portfolio' %}">recent work</a></li>
+                    <li><a href="{% url 'contact' %}">contact me</a></li>
+                </ul>
+            </div>
         </header>
        {% block content %}
        {% endblock %}
@@ -27,5 +40,15 @@
                 <li><a href="#"><img src="{% static  'twitter-icon.png' %}" alt="twitter"></a></li>
             </ul>
         </footer>
+        <script>
+            function showSideBar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'
+            }
+            function hideSideBar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+            }
+        </script>
     </body>
 </html>
