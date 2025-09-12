@@ -6,18 +6,14 @@
 {% block content %}
             <section class="blog-section">
                 <h1>blog</h1>
+                {% for posts in post %}
                 <div class="blog-post">
-                    <h2>Why python?</h2>
-                    <p class="date">created: 01 sept.2025</p>
-                    <p>As a beginner just getting into programming, there's a pletora of languages out there to choose  from yet, most people go for-and recommend-python as a first language. Why is this? Which should you choose?</p>
-                    <a href="#">read more...</a>
+                    <h2>{{ posts.title }}</h2>
+                    <p class="date">created: {{ posts.created }}</p>
+                    <p>{{ posts.preface }}</p>
+                    <a href="{% url 'blogpost' posts.id %}">read more...</a>
                 </div>
-                <div class="blog-post">
-                    <h2>I know syntax, now what?</h2>
-                    <p class="date">created: 02 sept.2025</p>
-                    <p>Getting your foot in the door and printing your first 'Hello world' to the screen is quite exhilirating and give you a rush, but as you learn more and write some basic programs with loops and conditionals, maybe even functions, it is natural to feel yourself slowing down and not quite sure of where to take it to next...</p>
-                    <a href="#">read more...</a>
-                </div>
+                {% endfor %}
             </section>
   {% endblock %}
   

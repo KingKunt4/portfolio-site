@@ -2,9 +2,27 @@
 {% block title %}contact{% endblock %}
 
 {% block content %}
-<form>
-    {{form}}
-    <button type="submit" name="submit">send</button>
+<div class="contact_form">
+    <h1>contact me</h1>
+    <form method="post" action="/contact/">
+        {%csrf_token%}
+        <div>
+            <label class="label">name</label>
+            {{form.name}}
+        </div>
+        <div>
+            <label class="label">email</label>
+            {{form.email}}
+        </div>
+        <div>
+            <label class="label">message</label>
+            {{form.message}}
+        </div>
+        <div>
+            <button type="submit" name="submit">send</button>
+        </div>
 
-</form>
+    </form>
+
+</div>
 {% endblock %}
