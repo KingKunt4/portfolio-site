@@ -2,13 +2,13 @@
 {% block title %}blog{% endblock %}
 
 {% block content %}
-<div class="blog-section dark-mode" onclick="darkMode()">
+<div class="blog-page dark-mode" onclick="darkMode()">
     <h1>{{ post.title }}</h1>
     <h6>{{ post.created }}</h6>
     <div class="header-img">
         <img src="{{ post.topic_image.url }}">
     </div>
-    <p>{{ post.body }}</p>
+    <p>{{ post.body|safe}}</p>
     <div class="related-images">
         {% for related in post.images.all %}
             <img src="{{ related.image.url }}">
