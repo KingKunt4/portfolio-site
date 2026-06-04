@@ -5,3 +5,5 @@ Simple black and white theme with some backend functionality to support:
 - new project uploads
 - receiving messages
 - new blog uploads
+
+using django for backend
